@@ -1,0 +1,147 @@
+mixin titleList(text,link)
+    li
+        a(href= link)= text
+mixin titleListItem(text)
+    li
+        i.fas.fa-caret-right 
+        a.pl-1(href="#")= text
+mixin cartList(text,img,price)
+        .cart-item.p-3
+            img(src=img, alt="")
+            div.text-center
+                p.m-0= text
+                p.m-0
+                    span 1 x 
+                    span.price= price
+            a(href="#")
+                i.far.fa-times-circle
+mixin navListMenu(title,text1,text2,text3,text4,text5,text6)
+    .nav__menu-home-item
+        div.d-flex.mb-2
+            img(src="./assets/images/4-black-squares.svg", alt="")
+            p.pl-2.m-0= title
+        ul
+            li.mb-2
+                a.text-span(href="#")= text1
+            li.mb-2
+                a.text-span(href="#")= text2
+            li.mb-2
+                a.text-span(href="#")= text3
+            li.mb-2
+                a.text-span(href="#")= text4
+            li
+                a.text-span(href="#")= text5
+            li
+                a.text-span(href="#")= text6
+header
+    section.header__top
+        .container
+            .d-flex.justify-content-between
+                .header__widget
+                    ul.d-flex
+                        each social,index in socials
+                            li(class=`py-3 ${index == 0 ? 'active' : ''}`)
+                                a(href="#").p-4
+                                    i(class=social)
+                .header__log.d-flex.align-items-center.justify-content-between
+                    a.text-center.border-right-0.d-block(href="./login.html") ĐĂNG NHẬP
+                    a.text-center.d-block(href="./register.html") ĐĂNG KÝ
+    section.header__mid
+        .container
+            .row
+                .col-lg-3.col-md-5.col-sm-5.col-12.logo-inner
+                    a(href="#").d-block.logo.py-3
+                        img.w-unset(src="./assets/images/logo_2.png", alt="")
+                .col.align-self-center.header__mid-contact
+                    p.m-0 HOTLINE:
+                    span.text-span (04) 9500 9650 - (04) 9500 8850
+                .col.align-self-center.header__mid-contact
+                    p.m-0 ĐẶT HÀNG NHANH:
+                    span.text-span (04) 9500 9650 - (04) 9500 8850
+                .col-lg-4.col-md-7.col-sm-7.col-12.align-self-center.header__mid-search
+                    input.form-control(type="text" placeholder="Tìm kiếm...")
+                    label(for="")
+                        i.fas.fa-search
+    section.header__bot.position-relative
+        .container
+            .row
+                .nav__mobile.col-lg-1.col-md-2.col-3(data-toggle="collapse" data-target="#demo")
+                    div.d-flex.justify-content-center
+                        a.text-white(href="#")
+                            i.fas.fa-bars
+                #demo.collapse.header__bot-collapse.position-absolute
+                    .container
+                        ul.row
+                            .col-lg-12
+                                li.active.position-relative
+                                    a(href="/") TRANG CHỦ
+                            .col-lg-12
+                                li.position-relative.nav-introduce
+                                    a(href="#") GIỚI THIỆU
+                                    ul.nav__mobile-introduce
+                                        +titleListItem("Giới thiệu chung")
+                                        li.position-relative.nav-introduce__child
+                                            i.fas.fa-caret-right 
+                                            a.pl-1(href="#") Hệ thống cửa hàng
+                                            ul.nav__mobile-introduce-child
+                                                +titleListItem("Hệ thống cửa hàng A1")
+                                                +titleListItem("Hệ thống cửa hàng A2")
+                                                +titleListItem("Hệ thống cửa hàng A3")
+                                        +titleListItem("Chính sách ưu đãi")
+                                        +titleListItem("Thông tin tuyển dụng")
+                            each title in titleList
+                                .col-lg-12
+                                    li
+                                        a(href=title.link)= title.name
+                nav.header__nav.col-lg-11
+                    ul.d-flex
+                        li.active.position-relative
+                            a(href="/") TRANG CHỦ
+                            .nav__menu-home.position-absolute
+                                .container
+                                    .row
+                                        .col-lg-9
+                                            .container
+                                                .row
+                                                    .col-lg-4
+                                                        +navListMenu("MÁY KHOAN ĐA NĂNG CNC","Máy khoan CNC điện","Máy phay đa năng 3R","Máy hàn, cắt kim loại","Máy in, phun tích điện","Máy ép gỗ chuẩn Nano")
+                                                    .col-lg-4
+                                                        +navListMenu("MÁY CẮT PLASMAR","Máy khoan CNC điện","Máy phay đa năng 3R","Máy hàn, cắt kim loại","Máy in, phun tích điện","Máy ép gỗ chuẩn Nano")
+                                                    .col-lg-4
+                                                        +navListMenu("MÁY PHAY CÔNG NGHỆ","Máy khoan CNC điện","Máy phay đa năng 3R","Máy hàn, cắt kim loại","Máy in, phun tích điện","Máy ép gỗ chuẩn Nano")
+                                                .row
+                                                    .col-lg-4
+                                                        +navListMenu("MÁY ÉP NHỰA THỦ CÔNG","Máy khoan CNC điện","Máy phay đa năng 3R","Máy hàn, cắt kim loại","Máy in, phun tích điện")
+                                                    .col-lg-4
+                                                        +navListMenu("MÁY UỐN TÔN ĐIỆN","Máy khoan CNC điện","Máy phay đa năng 3R","Máy hàn, cắt kim loại","Máy in, phun tích điện")
+                                                    .col-lg-4
+                                                        +navListMenu("MÁY NÉN KHÍ CNC","Máy khoan CNC điện","Máy phay đa năng 3R","Máy hàn, cắt kim loại","Máy in, phun tích điện")
+                                        .col-lg-3
+                                            img(src="./assets/images/1.png", alt="")
+                        li.position-relative.nav-introduce
+                            a(href="#") GIỚI THIỆU
+                            ul.nav__menu-introduce
+                                +titleListItem("Giới thiệu chung")
+                                li.position-relative
+                                    i.fas.fa-caret-right 
+                                    a.pl-1(href="#") Hệ thống cửa hàng
+                                    ul.nav__menu-introduce-child
+                                        +titleListItem("Hệ thống cửa hàng A1")
+                                        +titleListItem("Hệ thống cửa hàng A2")
+                                        +titleListItem("Hệ thống cửa hàng A3")
+                                +titleListItem("Chính sách ưu đãi")
+                                +titleListItem("Thông tin tuyển dụng")
+                        each title in titleList
+                            li
+                                a(href=title.link)= title.name
+                .col-lg-1.col-md-2.col-3.header__bot-cart.dropdown
+                    a.h-100.text-white.d-flex.justify-content-center.align-items-center.dropdown-toggle(href="#" data-toggle="dropdown")
+                        i.fas.fa-shopping-cart
+                        span.count__product-cart 0
+                    .cart-container.dropdown-menu
+                        .cart-list
+                        p.m-0.p-3.cart-count.text-right
+                            span TỔNG TIỀN:
+                            span.price#totalPrice 00.00 Đ
+                        .cart-btn.p-3.flex-end.float-right
+                            a(href="./shoppingCart.html").btn.btn-warning.text-white THANH TOÁN

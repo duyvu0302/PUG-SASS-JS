@@ -1,0 +1,201 @@
+block variables
+    include ../base/data.pug
+    - var options = detailProduct[0].size
+mixin product({img,name,gia,danhGia,content,stars},type)
+    if type != "Y"
+        .main__product
+            .main__product-inner
+                .main__product-img
+                    img(src=img, alt="product")
+                .main__product-content.text-center
+                    p.price= `${gia} Đ`
+                    p.main__product-content-title= name
+                    .d-flex.justify-content-center
+                        ul.d-flex
+                            - var i = 1;
+                            while i <= stars
+                                li 
+                                    i.fas.fa-star
+                                    - i++
+
+                            if !Number.isInteger(stars)
+                                li 
+                                    i.fas.fa-star-half-alt
+                                    - i++
+                            while i <= 5
+                                li 
+                                    i.far.fa-star
+                                    - i++
+                        span.pb-3.text-span.font-italic.pl-1= `( ${danhGia} đánh giá )`
+                .main__product-btn.d-flex.px-2
+                    a.btn.btn-warning MUA NGAY
+                    a.btn.btn-dark(href="./detailProduct.html") XEM CHI TIẾT
+    else
+        .main__productOther
+            .main__productOther-inner
+                .main__productOther-img
+                    img(src=img, alt="product")
+                .main__productOther-content
+                    p.main__productOther-content-title= name
+                    .d-flex
+                        ul.d-flex
+                            - var i = 1;
+                            while i <= stars
+                                li 
+                                    i.fas.fa-star
+                                    - i++
+
+                            if !Number.isInteger(stars)
+                                li 
+                                    i.fas.fa-star-half-alt
+                                    - i++
+                            while i <= 5
+                                li 
+                                    i.far.fa-star
+                                    - i++
+                        span.text-span.font-italic.pl-1= `( ${danhGia} đánh giá )`
+                    p.text-span.productOther-content-text.text-clamp.text-clamp--2= content
+                    p.price= `${gia} Đ`
+
+                    .main__product-btn.d-flex.justify-content-start
+                        a.btn.btn-warning MUA NGAY
+                        a.btn.btn-dark(href="./detailProduct.html") XEM CHI TIẾT
+mixin detailProduct()
+    each item in detailProduct
+        .main__detailProduct
+            .container
+                .row
+                    .col-lg-6.col-md-12
+                        .detail__product-img
+                            img(src="./assets/images/products/2_1.png", alt="")
+                            .detail__product-img-list
+                                ul.d-flex
+                                    - var imgDetail = 0
+                                    while imgDetail ++ < 6
+                                        li.py-1
+                                            img.border(src=`./assets/images/products/${imgDetail}.png`, alt="img productDetail")
+                    .col-lg-6.col-md-12
+                        .detail__product-content
+                            p= item.name
+                            .d-flex
+                                ul.d-flex
+                                    - var i = 1;
+                                    while i <= item.stars
+                                        li 
+                                            i.fas.fa-star
+                                            - i++
+
+                                    if !Number.isInteger(item.stars)
+                                        li 
+                                            i.fas.fa-star-half-alt
+                                            - i++
+                                    while i <= 5
+                                        li 
+                                            i.far.fa-star
+                                            - i++
+                                span.text-span.font-italic.pl-1.detailReview.position-relative= `( ${item.review} đánh giá )`
+                                span.pl-5.font-italic
+                                    u Gửi bình luận của bạn
+                            p.price.border-bottom.pb-3= `GYN: ${item.price} Đ`
+                            p.py-3 Thông tin sản phẩm :
+                                p.text-span= item.info
+                            form(action="#").form-inline.justify-content-between.border-bottom.pb-3
+                                .form-group.d-flex.flex-column.align-items-start.w-50.pr-2
+                                    label(for="selectProduct").mr-2 Size :
+                                    select.rounded-0.custom-select.form-control#selectProduct.pr-2.w-100(name="selectProduct") 
+                                        option --Chọn size--
+                                        each option in options
+                                                option(value=`${option}`)= option
+                                .form-group.d-flex.flex-column.align-items-start.w-50.pl-2
+                                    label(for="selectProduct").mr-2 Màu sắc :
+                                    select.rounded-0.custom-select.form-control#selectProduct.w-100.pr-2(name="selectProduct") 
+                                        option --Chọn màu--
+                                        each option in options
+                                                option(value=`${option}`)= option
+                            form(action="#").form-inline.py-3.detail__product-content-buy
+                                .form-group
+                                    .input-group.pr-2
+                                        input(type="text" value=1).form-control.w-25
+                                        .input-group-append
+                                            select.rounded-0.custom-select
+                                    button.rounded-0.btn.btn-warning.text-white Mua ngay
+                            .detail__product-content-social.d-flex.justify-content-between
+                                .content-social-left
+                                    a(href="#").text-white.fb.p-1
+                                        i.fab.fa-facebook-square
+                                        span.pl-1 Like
+                                    .social-tooltip 0
+                                    a(href="#").text-white.ml-2.tw.p-1
+                                        i.fab.fa-twitter-square
+                                        span.pl-1 Twitter
+                                    a(href="#").price.gg.border.pl-2.ml-2
+                                        i.fab.fa-google-plus-g
+                                        span.pl-1 1
+                                    .social-tooltip 0
+                                .content-social-right
+                                    a(href="#").ggPlus.border.text-white.p-1
+                                        i.fas.fa-plus-square.pr-1
+                                        span.p-l Share
+mixin titleSection(type,title,id,id1,id2)
+    .titleSection.pb-5.d-flex.justify-content-between
+        div.d-flex
+            img.mt-2(src="./assets/images/4-black-squares.svg", alt="").d-block
+            p.pl-2.m-0= title
+        .d-flex
+            if type == "Y"
+                .d-flex.listTab
+                    - const tabsProduct = ['Máy khoan',"Máy in 3D","Máy CNC","Máy tiện","Máy khác"]
+                    each tab in tabsProduct
+                        a.text-center(href="#")
+                            span.p-3= tab
+            - var title = 0
+            while (title++ < 3)
+                div(class=`${title == 1 ? 'btnDesktop' : ''} ${title == 2 ? 'btnLaptop' : ''} ${title == 3 ? 'btnMobile' : ''} titleSection__btn `)
+                    a(href=`#${title == 1 ? 'carouselProduct'+id :`${title==2 ? 'carouselProduct'+id1 : 'carouselProduct'+id2}`}` data-slide="prev")
+                        i.fas.fa-caret-left
+                    a.ml-1(href=`#${title == 1 ? 'carouselProduct'+id :`${title==2 ? 'carouselProduct'+id1 : 'carouselProduct'+id2}`}` data-slide="next")
+                        i.fas.fa-caret-right
+mixin news({img,title,date,author,comment,content})
+    .news__content
+        .news__inner
+            .img-news
+                img(src=img, alt="news")
+            h6.pt-3= title
+            .news-info.d-flex.font-italic
+                p.text-span.pr-3= date
+                p.text-span
+                    i.fas.fa-user
+                    span.px-1 Đăng bởi
+                    a(href="#").pr-3.text-yellow= author
+                p.text-span
+                    i.fas.fa-comments
+                    span=`${comment} bình luận`
+            .news-text.text-span
+                p= content
+                    a(href="./detailNews.html").font-0.text-yellow [Đọc tiếp]
+mixin pagination()
+        nav(aria-label='Page navigation example')
+            ul.pagination.justify-content-end.pagination-custom
+                li.page-item.disabled
+                    a.page-link(href='#', tabindex='-1') Trang trước
+                li.page-item.active
+                    a.page-link(href='#') 1
+                li.page-item
+                    a.page-link(href='#') 2
+                li.page-item
+                    a.page-link(href='#') 3
+                li.page-item
+                    a.page-link(href='#') Trang cuối
+mixin comment({img,name,date,content})
+    .comment.d-flex.justify-content-between
+        .comment__img
+            img.p-1.border(src=img, alt="person")
+        .comment__content.pl-3
+            p.comment__content-name= name
+            .comment__content-date.d-flex.justify-content-between
+                p.text-span.font-italic= date
+                p.text-italic.font-italic.text-yellow
+                    u Trả lời
+            .comment__content-text
+                p.text-clamp.text-clamp--2= content
+            

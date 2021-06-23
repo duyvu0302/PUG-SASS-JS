@@ -1,0 +1,18 @@
+.form-comment{
+    .form-group{
+        span{
+            color: $red;
+        }
+        input{
+            height: 50px;
+        }
+        textarea{
+            height: 110px;
+        }
+    }
+    .form-checkbox{
+        @include for-size(sm){
+            flex-direction: column !important;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+block variables
+    include ../base/data.pug
+
+mixin cart()
+    .shoppingCart.w-100
+        .cart__content
+            table.table.table-bordered.h6
+                thead
+                    tr.text-center
+                        th(scope="col") STT
+                        th(scope="col") SẢN PHẨM
+                        th(scope="col") THÔNG TIN
+                        th(scope="col") ĐƠN GIÁ
+                        th(scope="col") SỐ LƯỢNG
+                        th(scope="col") THÀNH TIỀN
+                        th(scope="col") XOÁ
+                tbody
+                    each item,index in carts
+                        tr.text-center
+                            th.align-middle(scope="row")= index+1
+                            td
+                                img(src=item.product, alt="product")
+                            td.align-middle= item.name
+                            - var price = item.price.toLocaleString('vi-VN')
+                            td.align-middle= `${price} Đ`
+                            td.align-middle
+                                input.w-25.text-center(type="number" min=1 value=1)
+                            td.align-middle= `${(item.price * item.count).toLocaleString()} Đ`
+                            td.align-middle
+                                i.text-danger.fas.fa-times
+        .cart__buy.d-flex.justify-content-end.py-5
+            .cart__buy-inner.w-50
+                table.table.table-bordered.h6
+                    tbody.text-right
+                        tr
+                            th Tổng tiền
+                            td 6.850.000 Đ
+                        tr
+                            th Thuế(VAT)
+                            td 685.000 Đ
+                        tr
+                            th Thanh toán
+                            td.text-danger 7.520.000 Đ
+                .cart__buy-btn.d-flex.justify-content-end.py-3
+                    a(href="./listProducts.html").rounded-0.text-white.btn.btn-dark TIẾP TỤC MUA HÀNG
+                    a(href="./infoCart.html").rounded-0.text-white.ml-2.btn.btn-warning THANH TOÁN
+mixin process(title, number) 
+  .process-custom
+    ul.bar-process
+      - var index = 1
+      while index <= 3
+        li(class= `bar-process-item${index === 1 || index === 3 ? ' mx-0' : ''}`)
+          i(class= `fas fa-check${index++ !== number ? ' d-none' : '' }`) 
+    h4.text-center.pt-3= title
+

@@ -1,0 +1,60 @@
+.error__content{
+    p{
+        font-size: 1.3rem;
+        @include for-size(sm){
+            font-size: 1rem;
+        }
+    }
+    .h1{
+        font-size: 100px;
+        color: $yellow;
+        @include for-size(sm){
+            font-size: 1.2rem;
+        }
+    }
+}
+.process-custom {
+    padding: 50px 0;
+  
+    .bar-process {
+      display: flex;
+      justify-content: center;
+    
+      &-item {
+        position: relative;
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        height: 25px;
+        width: 25px;
+        margin: 0 100px;
+  
+        color: $yellow;
+    
+        border: 3px solid $yellow;
+        border-radius: 999px;
+  
+        &::before,&::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+  
+          height: 3px;
+          width: 100px;
+  
+          background-color: $yellow;
+        }
+  
+        &::before {
+          left: -100px;
+        }
+  
+        &::after {
+          right: -100px;
+        }
+      }
+    }
+  }

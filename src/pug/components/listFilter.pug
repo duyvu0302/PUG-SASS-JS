@@ -1,0 +1,51 @@
+mixin listFilter(content,data,type,icon)
+    .col-lg-12.productHost__filter
+        ul.listFilter
+            li.filter--title
+                .d-flex.position-relative.align-items-center.justify-content-between
+                    div.d-flex.p-3
+                        i.mt-2(class = `${icon == "X" ? 'fas fa-th-large' : `${icon == "Y" ? 'fas fa-dollar-sign' : `${icon =="Z" ? 'fas fa-paint-brush' : 'fas fa-gift' }` }` }`)
+                        p.pl-2= content
+                    a.collapse__filter(href=`#filter${icon == "X" ? 1 : `${icon == "Y" ? 2 : `${icon =="Z" ? 3 : 4 }` }` }` data-toggle="collapse").pr-2.text-yellow
+                        i.fas.fa-chevron-down
+            +filter(data,type,icon)
+        div.filter(id = `filter${icon == "X" ? 1 : `${icon == "Y" ? 2 : `${icon =="Z" ? 3 : 4 }` }` }` class = "collapse")
+            +filter(data,type,icon)
+mixin filter(data,type,icon)
+    - const bgColors = ["#e61010","#f5bd10","#0685ca","#acacac","#252525"]
+    if type != "Y"
+        each filter,index in data
+            li.filter__item(onclick="handleChangeCategories(event)" data-id = `${index +1}`)
+                .d-flex.p-3(data-id = `${index + 1}`)
+                    if icon !== "Z"
+                        i.mt-2.fas.fa-th-large
+                        p.pl-2= filter
+                    else
+                        span.my-auto.filterColor(style=`background-color: ${bgColors[index]}`)
+                        p.pl-2= filter
+    else
+        -let productDiscount = 0
+        while productDiscount++ < 5
+            li.filter__discount
+                .d-flex
+                    img.pr-3(src=`./assets/images/products/${productDiscount}.png`, alt="productDiscount")
+                    .filter__discount-content
+                        p MÁY KHOAN BLACK DECKER
+                        p.price 1.500.000 Đ
+mixin newsFilter(content,data)
+    .col-lg-12.newsFilter
+        .newsFilter-title.d-flex
+            i.my-auto.pr-2.fas.fa-th-large
+            p= content
+        ul.d-flex.flex-wrap
+            each item in data
+                if data == newsTag
+                    li.pr-2.pb-2
+                        a.newsTag.px-3.font-italic.border.d-block(href="#")= item
+                if data == newsImg
+                    .news-img.pr-2.pb-2
+                        img(src=item, alt="newsImg")
+                if data == listNews
+                    li.py-2.d-block.w-100
+                        a.newsList(href="#").text-span= item
+    script(src="./assets/js/demo.js")        

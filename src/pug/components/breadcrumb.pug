@@ -1,0 +1,10 @@
+mixin breadcrumbs(arrBr)
+    nav(aria-label="breadcrumb")
+        .container
+            ol.breadcrumb.bg-white.pl-0.py-30px.mb-0
+                each item,index in arrBr
+                    if index !== arrBr.length - 1
+                        li.breadcrumb-item
+                            a(href=item.link)= item.name
+                    else
+                        li.breadcrumb-item.active(aria-current='page')= item.name

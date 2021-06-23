@@ -1,0 +1,50 @@
+.listProducts__categories{
+  .listProducts__select{
+    &::after{
+      content: "";
+      position: absolute;
+      margin-top: .5rem;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid $silver;
+      padding: 0 15px;
+      height: 2px;
+      z-index: 1;
+    }
+  }
+  .form-select{
+    select{
+      position: relative;
+      width: auto;
+      background: url(../assets/images/down-arrow.svg) no-repeat right 0.75rem center;
+      background-size: 10px 10px;
+    }
+    @include for-size(md){
+      @include flex(column,"",flex-start);
+      .form-group{
+        padding: 0 !important;
+        width: 70%;
+        @include flex(column,"",flex-start);
+      }
+    }
+  
+    #selectProduct{
+      width: 200px;
+    font-size: 13px;
+  }
+    #selectProduct1{
+      width: 100px;
+    font-size: 13px;
+  }
+  }
+  .listProduct__btn-view{
+    bottom:  100% ;
+    right: 15px;
+    a{
+      padding: .5rem .7rem;
+      color: $silver;
+      border: 1px solid $silver;
+    }
+  }
+}

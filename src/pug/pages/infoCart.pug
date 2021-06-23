@@ -1,0 +1,35 @@
+extend ../base/base.pug
+block content
+    +process('Thông tin giỏ hàng', 1)
+    section.info-cart   
+        .container
+            .row
+                .col-8
+                    table.table.table-bordered
+                        thead
+                            tr.text-center
+                                th #
+                                th SẢN PHẨM
+                                th THÔNG TIN
+                                th ĐƠN GIÁ
+                                th SỐ LƯỢNG
+                                th THÀNH TIỀN
+                        tbody#cart-shopping-body
+                            
+                .col-4
+                    table.table.table-bordered
+                        tbody
+                            tr
+                                th(scope="row") Tổng tiền
+                                td#shopping-cart-total.font-weight-bold.text-danger.text-right 0
+                            tr
+                                th(scope="row") Thuế
+                                td#shopping-cart-tax.font-weight-bold.text-danger.text-right 0
+                            tr
+                                th(scope="row") Thanh toán
+                                td#shopping-cart-pay.font-weight-bold.text-danger.text-right 0
+            .row
+                .col.d-flex.justify-content-end.mb-50px
+                a.btn.btn-dark.rounded-0.text-uppercase.mr-2(href="./shoppingCart.html") Quay lại
+                a#btn-cart-submit(href="./infoPerson.html").btn.btn-yellow.rounded-0.text-uppercase Thanh toán
+    script(src="./assets/js/infoCart.js")    

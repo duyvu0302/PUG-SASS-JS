@@ -1,0 +1,49 @@
+extend ../base/base.pug
+include ../components/carts.pug
+
+block content
+    +breadcrumbs([{ link: '/', name: 'Trang chủ' }, { link: './shoppingCart.html', name: 'Giỏ hàng' }])
+    section.cart
+        .container
+            .row
+                .col-lg-12
+                    .shoppingCart.w-100
+                        .cart__content
+                            table.table.table-bordered.h6
+                                thead
+                                    tr.text-center
+                                        th(scope="col") STT
+                                        th.w-25(scope="col") SẢN PHẨM
+                                        th(scope="col") THÔNG TIN
+                                        th(scope="col") ĐƠN GIÁ
+                                        th(scope="col") SỐ LƯỢNG
+                                        th(scope="col") THÀNH TIỀN
+                                        th(scope="col") XOÁ
+                                tbody.item-table
+                        .shopping-empty.text-center.price
+                            p.h6 Bạn chưa đặt sản phẩm nào !
+                                span.pl-2 Nhấn 
+                                a(href="./listProducts.html") QUAY LẠI
+                                span.pl-1 để mua hàng
+                
+                .col-lg-12
+                    .cart__buy.d-flex.justify-content-end.py-5
+                        .cart__buy-inner.w-50
+                            table.table.table-bordered.h6.table-shopping-cart
+                                tbody.text-right
+                                    tr
+                                        th Tổng tiền
+                                        td.total-shopping-cart 
+                                    tr
+                                        th Thuế(VAT)
+                                        td.discount-shopping-cart 
+                                    tr
+                                        th Thanh toán
+                                        td.text-danger.payment-shopping-cart 
+                            .cart__buy-btn.d-flex.justify-content-end.py-3
+                                a(href="./listProducts.html").rounded-0.text-white.btn.btn-dark TIẾP TỤC MUA HÀNG
+                                a(href="./infoCart.html").rounded-0.text-white.ml-2.btn.btn-warning THANH TOÁN
+    #toast
+block script
+    script(src="./assets/js/shoppingCart.js")
+    script(src="./assets/js/toast.js")

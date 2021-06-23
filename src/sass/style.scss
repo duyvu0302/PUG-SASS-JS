@@ -1,0 +1,16 @@
+@import './base/variables';
+@import './base/global';
+@import './base/mixin';
+
+@import './components//carousel';
+@import './components/modal';
+@import './layouts/footer';
+@import './layouts/header';
+@import './components/filter';
+@import './components/product';
+@import './components/listProducts';
+@import './pages/detailProduct';
+@import './pages/detailNews';
+@import './pages/error';
+
+@import './pages/index.scss';

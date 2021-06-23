@@ -1,0 +1,370 @@
+header{
+  .header__top{
+    background-image: linear-gradient(
+      0deg
+      , #ebebeb 0%, #ffffff 100%);
+      a{
+        color: $black;
+      }
+    .container{
+      @include for-size(sm){
+        padding: 0;
+      }
+      >.d-flex{
+          @include for-size(sm){
+          display: unset !important;
+
+        }
+      }
+    }
+    .header__widget{
+      @include for-size(sm){
+        display: none;
+      }
+      ul{
+        .active{
+          background-color: $yellow;
+          >a{
+            color: $white;
+          }
+        }
+        li{
+          
+          &:hover{
+            background-color: $yellow;
+          }
+          &:hover >a{
+              color: $white;
+          }
+        }
+      }
+    }
+    .header__log{
+      a{
+        @include for-size(sm){
+          width: 50%;
+        }
+        padding: .98rem;
+        border: 1px solid $border-color-1;
+        font-weight: 700;
+        &:hover{
+          background-color: $yellow;
+          color: $white;
+        }
+      }
+    }
+  }
+  .header__mid{
+    &-contact{
+      @include for-size(normal){
+        display: none;
+      }
+    }
+      .logo-inner{
+        @include for-size(lg){
+            @include flex("",center,"","");         
+        }
+        .logo{
+  
+          >img{
+            width: unset;
+          }
+        }
+      }
+      .m-0{
+        color: $yellow;
+        font-weight: 700;
+        font-size: 1rem;
+      }
+      &-search{
+        position: relative;
+        @include for-size(sm){
+          margin-bottom: 2rem;
+        }
+        input{
+          height: 60px;
+          border-radius: 40px;
+          -webkit-border-radius: 40px;
+          -moz-border-radius: 40px;
+          -ms-border-radius: 40px;
+          -o-border-radius: 40px;
+        }   
+        label{
+          position: absolute;
+          top: 50%;
+          right: 10%;
+          @include transformY(-50%);
+          
+        }
+      }
+  }
+  .header__bot{
+    .row{
+      @include for-size(xl){
+        justify-content: space-between;
+      }
+    }
+    background-color: $black;
+    .nav__mobile{
+      display: none;
+      @include for-size(lg){
+        display: block;
+      }
+      >.d-flex{
+        padding: 1rem 2rem;
+        font-size: 20px;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        @include for-size(sm){
+          border-left: unset;
+        }
+      }
+    }
+    .header__bot-collapse{
+      left: 0;
+      width: 100%;
+      top: 100%;
+      z-index: 16;
+      .col-lg-12{
+        &:hover{
+          >li{
+            >a{
+              color: $yellow;
+            }
+          }
+        }
+      }
+      a,i{
+        color: $white;
+      }
+      li{
+        padding: 1rem;
+       
+      }
+      background-color: $black;
+      .active{
+        background-color: $yellow;
+        a{
+          color: $white !important;
+        }
+      }
+      .nav-introduce{
+        
+        &:hover {
+          .nav__mobile-introduce{
+            @include show();
+            max-height: 100vh;
+
+          }
+          
+         
+        }
+        .nav__mobile-introduce{
+          @include hide();
+          max-height: 0;
+          @include transition();
+          >li{
+            &:hover{
+              >a{
+                color: $yellow;
+              }
+            }
+          }
+        }
+        &__child{
+          &:hover .nav__mobile-introduce-child{
+            @include show();
+            max-height: 100vh;
+           
+          }
+          li{
+            &:hover{
+              background-color: $yellow;
+            }
+          }
+        }
+        .nav__mobile-introduce-child{
+          @include hide();
+          max-height: 0;
+          @include transition();
+
+        }
+      }
+    }
+    .header__nav{
+      @include for-size(lg,down){
+        display: none;
+      }
+      >ul{
+        .nav__menu-home{
+          @include for-size(xl,down){
+            display: none;
+          }
+          width: 1110px;
+          padding: 2rem 0;
+          top: 100%;
+          z-index: 2;
+          left: 0;
+          background-color: $white;
+          @include hide();
+          @include borderMe();
+          @include transition();
+          &-item{
+            img{
+              margin-top: auto;
+              margin-bottom: auto;
+              width: 15px;
+              height: 15px;
+            }
+            p{
+              font-size: 15px;
+            }
+            ul{
+              li{
+                &:hover a{
+                  color: $yellow;
+                }
+              }
+            }
+  
+          }
+        }
+        .active{
+          background-color: $yellow;
+          &:hover >a{
+            color: $white !important;
+          }
+          &:hover .nav__menu-home{
+            @include show();
+          }
+        }
+        >li{
+          padding: 1.2rem;
+          &:hover >a{
+            color: $yellow ;
+          }
+          >a{
+            color: $white;
+          }
+          
+        }
+        .nav-introduce:hover .nav__menu-introduce{
+          @include show();
+        }
+        .nav__menu-introduce{
+          position: absolute;
+          top: 100%;
+          z-index: 1;
+          left: 0;
+          width: 250px;
+          background-color: $white;
+          @include border();
+          @include transition();
+          @include hide();
+          >li{
+          padding: 1.2rem;
+          &:hover{
+            background-color: $yellow;
+          }
+            a{
+            color: $black !important;
+            }
+          }
+          .position-relative:hover .nav__menu-introduce-child{
+              @include show();
+          }
+          .nav__menu-introduce-child{
+            
+            position: absolute;
+            right: -100%;
+            top: 0;
+            background-color: $white;
+            width: 250px;
+            @include border();
+            @include transition();
+            @include hide();
+            >li{
+            padding: 1.2rem;
+            &:hover{
+              background-color: $yellow;
+            }
+            a{
+            color: $black !important;
+            }
+            }
+          }
+        }
+      }
+  
+    }
+    &-cart{
+      @include for-size(lg){
+      }
+      >a{
+        position: relative;
+        font-size: 1rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        @include for-size(sm){
+          border-right: unset;
+        }
+        &::after{
+          content: none;
+        }
+        span{
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 15%;
+          right: 15%;
+          background-color: $yellow;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+  }
+      }
+      .dropdown-menu{
+        font-size: 17px;
+        width: 350px !important;
+        position: absolute !important;
+        top: 99% !important;
+        left: 0 !important;
+        @include borderMe();
+        transform: translateX(-77%) !important;
+        @include for-size(sm){
+          display: none;
+        }
+        .price{
+          color: $red;
+        }
+        .cart-item      
+        {
+          border-bottom: 1px solid #dee2e6;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          padding: 20px;
+          i{
+            color: $green;
+          }
+          >img{
+            width: 80px;
+            height: 80px;
+          }
+        }
+        .cart-item:nth-child(3){
+            border: unset;
+        }   
+        .cart-btn{
+          color: $white;
+        }
+    }
+  
+    }
+  }
+}

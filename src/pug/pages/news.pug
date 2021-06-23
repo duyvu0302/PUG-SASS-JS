@@ -1,0 +1,21 @@
+extend ../base/base.pug
+block content
+    +breadcrumbs([{ link: '/', name: 'Trang chủ' }, { link: './news.html', name: 'Tin tức' }])
+    section.news
+        .container
+            .row
+                .col-lg-3
+                    .row
+                        +listFilter("DANH MỤC SẢN PHẨM",listFilter,"","X","Y")
+                        p.py-3.col-lg-12.d-none.d-lg-block
+                        +newsFilter("DANH MỤC TIN TỨC",listNews)
+                        p.py-3.col-lg-12.d-none.d-lg-block
+                        +newsFilter("THƯ VIỆN HÌNH ẢNH",newsImg)
+                        p.py-3.col-lg-12
+                        +newsFilter("THẺ TAGS",newsTag)
+                block contentNews 
+                    .col-lg-9
+                        each item in newsDiscount
+                            +news(item)
+                        .col-lg-12.py-5.border-top
+                            +pagination()

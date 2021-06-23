@@ -1,0 +1,67 @@
+#carouselHome{
+  .carousel-indicators{
+    li{
+      height: 10px !important;
+      width: 10px !important;
+      background-color: $silver !important;
+    }
+    .active{
+      background-color: $font-dark !important;
+    }
+  }
+}
+.carouselProduct{
+  @include for-size(lg){
+    padding-top: 2rem;
+  }
+  width: 100%;
+  .carousel-inner{
+    padding-bottom: 2rem;
+    .img-center{
+      .main__product{
+        height: 709px !important;
+        &-inner{
+          .main__product-img{
+            img{
+              width: 450px;
+              height: 450px;
+            }
+          }
+          .main__product-content{
+            padding: 2.4rem 0;
+          }
+        }
+      }
+    }
+  }
+}
+.desktopCarousel{
+  display: block;
+  @include for-size(normal,down){
+    display: none !important;
+  }
+}
+.btnDesktop{
+  @extend .desktopCarousel;
+}
+
+.laptopCarousel{
+  display: none !important;
+  @include for-size(normal,down){
+    display: block !important;
+  }
+  @include for-size(mdC,down){
+    display: none !important;
+  }
+}
+.btnLaptop{
+  @extend .laptopCarousel;
+}
+.mobileCarousel{
+  @include for-size(mdC,up){
+    display: none !important;
+  }
+}
+.btnMobile{
+  @extend .mobileCarousel;
+}

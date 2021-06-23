@@ -1,0 +1,77 @@
+extends ../base/base.pug
+
+block content
+  +process('Thông tin người dùng', 2)
+  section.info-person.padding-top-50px
+    .container
+      form.custom__form.mb-5( class="form" id="form-1")
+        .row  
+          .col-7
+            h4 Thông tin cá nhân#{'\x3A'}
+            .form-row
+              .form-group.col-12.row.align-items-center
+                label.col-3.mb-0(for='name') 
+                  | Họ và tên#{'\x3A'}
+                  span #{'\x2A'}
+                input#name.col-9.form-control(type='text' name="name" rules = "required|name")
+                span.col-9.offset-3.form-message.pl-0.mt-2.text-danger
+              .form-group.col-12.row.align-items-center
+                label.col-3.mb-0(for='email') 
+                  | Email#{'\x3A'}
+                  span #{'\x2A'}
+                input#email.col-9.form-control(type='email' name="email" rules = "required|email")
+                span.col-9.offset-3.form-message.pl-0.mt-2.text-danger
+              .form-group.col-12.row.align-items-center
+                label.col-3.mb-0(for='phone') 
+                  | Số điện thoại#{'\x3A'}
+                  span #{'\x2A'}
+                input#phone.col-9.form-control(type='text' name="phone" rules="required|phone")
+                span.col-9.offset-3.form-message.pl-0.mt-2.text-danger
+              .form-group.col-12.row.align-items-center
+                label.col-3.mb-0(for='address')
+                  | Địa chỉ#{'\x3A'}
+                  span #{'\x2A'}
+                input#address.col-9.form-control(type='text' name= "address" rules="required|address")
+                span.col-9.offset-3.form-message.pl-0.mt-2.text-danger
+              .form-group.col-12.row.align-items-center
+                label.col-3.mb-0(for='note') 
+                  | Ghi chú#{'\x3A'}
+                textarea#note.col-9.form-control(name="note" cols="30", rows="5") 
+          .col-5
+            h4 Chọn phương thức thanh toán#{'\x3A'}
+            .form-check
+              input#exampleRadios1.form-check-input(type='radio', name='payMethod', value='Tiền mặt', checked)
+              label.form-check-label.font-size-14px(for='exampleRadios1')
+                | Thanh toán bằng tiền mặt
+            .form-check
+              input#exampleRadios2.form-check-input(type='radio', name='payMethod', value='Thẻ ngân hàng')
+              label.form-check-label.font-size-14px(for='exampleRadios2')
+                | Thanh toán bằng thẻ ngân hàng
+            .form-check
+              input#exampleRadios3.form-check-input(type='radio', name='payMethod', value='Ví điện tử')
+              label.form-check-label.font-size-14px(for='exampleRadios3')
+                | Thanh toán bằng ví điện tử
+        .row
+          .col.d-flex.justify-content-end.mb-50px
+            a.btn.btn-dark.rounded-0.text-uppercase.mr-2(href="./infoCart.html") Quay lại
+            button#btn-submit.form-submit.btn.btn-yellow.rounded-0.text-uppercase Thanh toán
+
+block script
+  script(src="./assets/js/infoPerson.js")
+  script.
+     Validator({
+      form: '#form-1',
+      errorSelector: '.form-message',
+      formSelector : '.form-group',
+      rules: [
+        Validator.isRequired('#name','Vui lòng nhập tên đầy đủ'),
+        Validator.isRequired('#email','Vui lòng nhập email'),
+        Validator.isRequired('#phone','Vui lòng nhập số điện thoại'),
+        Validator.isRequired('#address','Vui lòng nhập địa chỉ'),
+        Validator.isEmail('#email'),
+        Validator.isName('#name'),
+        Validator.isPhone('#phone'),
+      ],
+      onSubmit: function(data){
+      }
+    });

@@ -1,0 +1,219 @@
+-
+  var devices = [
+    {
+      icon: 'fas fa-plane',
+      title: 'MIỄN PHÍ VẬN CHUYỂN',
+      content: 'Chúng tôi vận chuyển miễn phí với các đơn hàng trị giá trên 1000.000 Đ.'
+    },
+    {
+      icon: 'fas fa-sync-alt',
+      title: 'CHÍNH SÁCH ĐỔI TRẢ',
+      content: 'Nếu như phát hiện lỗi của nhà sản xuất, chúng tôi sẽ đổi mới sản phẩm trong 7 ngày đầu tiên.'
+    },
+    {
+      icon: 'fas fa-gift',
+      title: 'KHUYẾN MÃI HÀNG TUẦN',
+      content: 'Mỗi thứ 7 hàng tuần đều có chương trình giảm giá và khuyến mại lớn.'
+    },
+    {
+      icon: 'fas fa-thumbs-up',
+      title: 'CAM KẾT HÀNG CHÍNH HÃNG',
+      content: 'Chúng tôi cam kết bán hàng chính hãng 100% với tất cả các loại sản phẩm.'
+    }
+  ]
+- 
+  var socials = ['fab fa-facebook-f', 'fab fa-google-plus-g', 'fab fa-instagram', 'fab fa-twitter']
+-
+  var products =
+  [
+    { img: "./assets/images/products/1.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3 },
+    { img: "./assets/images/products/2.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 1.5 },
+    { img: "./assets/images/products/3.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 4 },
+    { img: "./assets/images/products/4.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 2 },
+    { img: "./assets/images/products/5.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 2.5 },
+    { img: "./assets/images/products/6.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 5 },
+    { img: "./assets/images/products/7.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/8.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/9.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/10.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/11.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/12.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+  ]
+-
+  var newProducts =
+  [
+    { img: "./assets/images/products/11.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3 },
+    { img: "./assets/images/products/12.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 1.5 },
+    { img: "./assets/images/products/13.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 4 },
+    { img: "./assets/images/products/4.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 2 },
+    { img: "./assets/images/products/5.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 2.5 },
+    { img: "./assets/images/products/6.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 5 },
+    { img: "./assets/images/products/7.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/8.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/9.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/3.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/2.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/1.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+  ]
+-
+  var sellingProduct =
+  [
+    { img: "./assets/images/products/12.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3 },
+    { img: "./assets/images/products/12.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 1.5 },
+    { img: "./assets/images/products/10.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 4 },
+    { img: "./assets/images/products/4.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 2 },
+    { img: "./assets/images/products/5.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 2.5 },
+    { img: "./assets/images/products/6.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 5 },
+    { img: "./assets/images/products/7.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/8.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/9.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/3.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
+  ]
+- 
+  var newProduct2 =
+  [
+    { img: "./assets/images/products/12.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3 },
+    { img: "./assets/images/products/12.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 1.5 },
+    { img: "./assets/images/products/10.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 4 },
+    { img: "./assets/images/products/4.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 2 },
+    { img: "./assets/images/products/5.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 2.5 },
+    { img: "./assets/images/products/6.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 5 },
+    { img: "./assets/images/products/7.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/8.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/9.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/3.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/9.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/3.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/7.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/8.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/9.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/3.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/9.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 },
+    { img: "./assets/images/products/3.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12,content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt",stars: 3.5 }
+  ]
+
+-
+  var partners =
+  [
+    './assets/images/logo-1/1.png',
+    './assets/images/logo-1/2.png',
+    './assets/images/logo-1/3.png',
+    './assets/images/logo-1/4.png',
+    './assets/images/logo-1/5.png',
+  ]
+
+- 
+  var softPrice = ["0 - 200.000 Đ (45) ","200.000 Đ - 500.000 Đ (32) ","500.000 Đ - 1000.000 Đ (27) ","1000.000 Đ - 2000.000 Đ (16)","Trên 2000.000 Đ (9) "]
+- 
+  var listFilter =["Máy in khổ lớn","Máy quét Canon 3D","Máy hàn điện Alumia","Máy khoan Decameta","Máy phay đa năng CNC","Máy mài, tiện DC 12v","Máy khoan, cắt CNC","Máy quay thông minh N3","Motor R34C thông dụng","Máy in lazer 3D"]
+-
+  var listNews = ['Đời sống pháp luật (5)','Kinh tế trong nước (8)','Sức khoẻ gia đình (9)','Công nghệ thông tin','Tin tức khác (12)']
+-
+  var newsImg = 
+  [
+    './assets/images/blog-image/1.png',
+    './assets/images/blog-image/2.png',
+    './assets/images/blog-image/3.png',
+    './assets/images/blog-image/4.png',
+    './assets/images/blog-image/5.png',
+    './assets/images/blog-image/6.png',
+  ]
+-
+  var newsTag = ['thời trang','máy khoan','news','công nghiệp','xây dựng','phay','máy cắt','hoá chất']
+- 
+    var titleList =
+    [
+        {name:"SẢN PHẨM",link:"./listProducts.html"},
+        {name:"TIN KHUYẾN MÃI",link:"./news.html"},
+        {name:"DỊCH VỤ",link:"./listProducts.html"},
+        {name:"LIÊN HỆ",link:"./listProducts.html"}
+    ]
+- 
+    var titleListFT =
+    [
+        {name:"Trang chủ",link:"./"},
+        {name:"Giới thiệu",link:"./listProducts.html"},
+        {name:"Sản phẩm",link:"./listProducts.html"},
+        {name:"Tin khuyến mãi",link:"./news.html"},
+        {name:"Dịch vụ",link:"./listProducts.html"},
+        {name:"Liên hệ",link:"./listProducts.html"}
+    ]
+-
+    var detailProduct =[
+        { img:"./assets/images/products/2_1.png",
+         name: "Máy khoan CNC 3D", price: "2.350.000", 
+         review: 12, 
+         stars: 3,
+         info:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercition ullamco laboris nisi ut aliquip ex ea commodo consequat",
+         size:["One","Two","Three"],
+         color:["One","Two","Three"]
+         },
+    ]
+-
+  var newsDiscount =
+  [
+    {
+      img:"./assets/images/article/1.png",
+      title:"THẾ HỆ MÁY KHOAN CẮT CNC ĐẦU TIÊN ĐÃ ĐƯỢC TÁI SỬ DỤNG",
+      date:"Thứ năm, ngày 23/10/2015 8:00 AM",
+      author:"Design Team",
+      comment: 12,
+      content:"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure..."
+    },
+    {
+      img:"./assets/images/article/2.png",
+      title:"THẾ HỆ MÁY KHOAN CẮT CNC ĐẦU TIÊN ĐÃ ĐƯỢC TÁI SỬ DỤNG",
+      date:"Thứ năm, ngày 23/10/2015 8:00 AM",
+      author:"Design Team",
+      comment: 12,
+      content:"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure..."
+    },
+    {
+      img:"./assets/images/article/3.png",
+      title:"THẾ HỆ MÁY KHOAN CẮT CNC ĐẦU TIÊN ĐÃ ĐƯỢC TÁI SỬ DỤNG",
+      date:"Thứ năm, ngày 23/10/2015 8:00 AM",
+      author:"Design Team",
+      comment: 12,
+      content:"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure..."
+    },
+    {
+      img:"./assets/images/article/4.png",
+      title:"THẾ HỆ MÁY KHOAN CẮT CNC ĐẦU TIÊN ĐÃ ĐƯỢC TÁI SỬ DỤNG",
+      date:"Thứ năm, ngày 23/10/2015 8:00 AM",
+      author:"Design Team",
+      comment: 12,
+      content:"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure..."
+    }
+  ]
+-
+  var comments =
+  [
+    {
+      img:"./assets/images/person.png",
+      name:"HOANG TRUONG ANH",
+      date:"Thứ năm, ngày 23/10/2015 8:00 AM",
+      content:"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+    }    
+  ]
+-
+  var carts =
+  [
+    {
+      product: "./assets/images/products/13.png",
+      name:"MÁY KHOAN, CẮT ĐA NĂNG CNC",
+      price: 2350000,
+      count:1
+    },
+    {
+      product: "./assets/images/products/12.png",
+      name:"MÁY KHOAN, CẮT ĐA NĂNG CNC",
+      price: 2350000,
+      count:1
+    },
+    {
+      product: "./assets/images/products/11.png",
+      name:"MÁY KHOAN, CẮT ĐA NĂNG CNC",
+      price: 2350000,
+      count:1
+    }
+  ]

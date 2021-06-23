@@ -1,0 +1,42 @@
+include data.pug
+block variables
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="x-ua-compatible", content="ie=edge")
+        meta(content="", name="description")
+        meta(content="", name="keywords")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(content="telephone=no", name="format-detection")
+        meta(name="HandheldFriendly", content="true")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+
+        link(rel="stylesheet", href="./css/main.css")
+        
+        block style
+
+    body
+        // -------------------Header------------------
+        include ../partials/header.pug
+        include ../components/modal.pug
+        include ../components/carousels.pug
+        include ../components/listFilter.pug
+        include ../components/product.pug
+        include ../components/breadcrumb.pug
+        include ../components/carts.pug
+
+        block content
+        // -------------------Footer------------------
+        include ../partials/footer.pug
+
+        script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+        script(src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js')
+        script.
+            let lengthProductInCart = JSON.parse(localStorage.getItem("productInCart"))
+            $(".count__product-cart").html(lengthProductInCart? lengthProductInCart.length: 0);
+        block script

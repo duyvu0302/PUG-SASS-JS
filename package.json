@@ -1,0 +1,27 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "npm i gulp --save-dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "browser-sync": "^2.26.14",
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-scss": "^1.4.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "pug": "^3.0.2"
+  }
+}

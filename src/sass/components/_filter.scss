@@ -1,0 +1,105 @@
+
+.productHost__filter{
+  .listFilter{
+    @include borderMe();
+    .filter--title{
+      background-color: $black;
+      color: $yellow;
+     
+    }
+    i{
+      display: inline-block;
+    }
+    .filter__item{
+      color: $silver;
+      @include for-size(normal){
+        display: none;
+      }
+      cursor: pointer;
+      &:hover{
+        div{
+          color: $yellow !important;
+        }
+      }
+      .filterColor{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .filter__discount{
+      @include for-size(normal){
+        display: none;
+        
+      }
+      cursor: pointer;
+      .d-flex{
+        padding: .5rem;
+        img{
+          height:  100px;
+          width: auto;
+        }
+      }
+    }
+  }
+  .filter--title{
+    a{
+      display: none;
+      @include for-size(normal){
+        display: inline-block;
+      }
+    }
+  }
+  .filter{
+    .filter__item{
+      color: $silver;
+      cursor: pointer;
+      &:hover{
+        color: $yellow !important; 
+      }
+      .filterColor{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+      }
+      
+    }
+    .filter__discount{
+      cursor: pointer;
+      .d-flex{
+        padding: .5rem;
+        justify-content: space-around;
+        img{
+          height:  100px;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+.newsFilter{
+  @include for-size(lg){
+    display: none;
+  }
+  .newsTag{
+    border-color: black !important;
+    color: #343a40;
+    &:hover{
+      background-color: $black;
+      color: $white;
+    }
+  }
+  .news-img{
+    img{
+      width: 77px !important;
+    }
+  }
+  li{
+    cursor: pointer;
+    &:hover{
+      .newsList{
+        color: $yellow;
+      }
+    }
+  }
+}

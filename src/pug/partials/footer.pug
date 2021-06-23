@@ -1,0 +1,76 @@
+footer.footer
+    .footer__content.py-5
+        .container
+                ul.row
+                    .col-lg-4.col-md-12
+                        .d-flex.mb-2
+                            img(src="./assets/images/4-black-squares.svg", alt="")
+                            p.m-0.pl-2 VỀ CHÚNG TÔI
+                        .about-us__content
+                            p Công ty Cổ phần Công nghệ DKT đã và đang khẳng định được vị trí hàng đầu trong lĩnh vực Thương mại điện tử.
+                            p 
+                                i.fas.fa-map-marker-alt
+                                span  Tầng 4 - Tòa nhà Hanoi Group 442 Đội Cấn Ba Đình - Hà Nội
+                            p
+                                i.fas.fa-envelope
+                                span  support@dkt.com.vn
+                            p 
+                                i.fas.fa-mobile-alt
+                                span  (84-4) 66558868 - (84-4) 37868904
+                    .col-lg.col-md-3.col-12.col-sm-6
+                        +navListMenu("CHÍNH SÁCH","Chính sách giao hàng","Chính sách đổi sản phẩm","Chính sách bảo hành","Chính sách trả góp","Vận chuyển miễn phí")
+                    .col-lg.col-md-3.col-12.col-sm-6
+                        +navListMenu("DỊCH VỤ & HỖ TRỢ","Hệ thống cửa hàng","Hướng dẫn mua hàng","Hướng dẫn thanh toán","Dịch vụ đổi trả hàng","Câu hỏi thường gặp")
+                    .col-lg.col-md-3.col-12.col-sm-6
+                        +navListMenu("TIN TỨC - SỰ KIỆN","Tin tức mới nhất","Tin tức khuyến mãi","Tuyển dụng, đãi ngộ","Download tài liệu","Chương trình đối tác","Nhà phát triển ứng dụng")
+                    .col-lg.col-md-3.col-12.col-sm-6
+                        .d-flex.mb-2
+                            img(src="./assets/images/4-black-squares.svg", alt="")
+                            p.m-0.pl-2 VỀ CHÚNG TÔI
+                        - var socials = [{class:'fab fa-facebook-f',name:'Facebook'}, {class:'fab fa-twitter',name:'Twitter'}, {class:'fab fa-google-plus-g',name:'Google'},{class:'fab fa-skype',name:'Skype'},{class:'fab fa-instagram',name:'Instagram'}]                        
+                        ul  
+                            each social,index in socials
+                                li.mb-2(class)
+                                    a(href="#")
+                                        i(class=social.class)
+                                        span.pl-2= social.name
+        .container.footer__contact.mt-3
+            .row
+                .col-lg-6.footer__contact-phone
+                    p Thanh toán:
+                    .col-lg-12.container 
+                        .row
+                            - var i=0
+                            while (i++<8)
+                                .col-lg-3.col-md-3.col-6.pb-2
+                                    img(src=`./assets/images/logo/logo_${i}.png`, alt="")
+                .col-lg-6.footer__contact-mess
+                    p.pb-2 Giải đáp nhanh:
+                    .col-lg-12.container
+                        .row
+                            .col-lg-6.d-flex.col-md-6.col-sm-6
+                                a(href="#")
+                                    i.fas.fa-phone-alt.d-block
+                                div.pl-1.text-center
+                                    p Tư vấn miễn phí (24/7)
+                                    span 1900 650 650
+                            .col-lg-6.d-flex.col-md-6.col-sm-6
+                                a(href="#")
+                                    i.far.fa-comments.d-block
+                                div.pl-1.text-center
+                                    p Góp ý - phản hồi - thắc mắc
+                                    span 1900 650 650
+    .footer__bot
+        .container
+            .row
+                div.col-lg-4.footer__bot-content.col-md-12
+                    span Bản quyền thuộc về 
+                    span.pl-1.text-white  Design Team.
+                    span.px-1  Phát triển bởi
+                    span.text-white Bizweb
+                .col-lg-8.footer__bot-nav.d-flex.text-white.col-md-12.justify-content-center.align-items-center
+                    each title in titleListFT
+                        li
+                            a(href=title.link)= title.name
+
+    

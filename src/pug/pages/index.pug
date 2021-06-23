@@ -1,0 +1,90 @@
+extend ../base/base.pug
+block content
+    main.mt-5
+        section.modal__home
+            +modalHome
+        section.banner__main.pb-5
+            .container
+                .row
+                    .col-lg-8.pr-0.col-md-12
+                        +carouselsHome()
+                    .col-lg-4.pl-0.col-md-12
+                        .banner__main-devices.border.h-100
+                            each device,index in devices
+                                .device__item.d-flex.px-3.pt-3
+                                    span.my-auto.pr-4
+                                        i(class=`${device.icon}`)
+                                    .device__item-content
+                                        p= device.title
+                                        span= device.content
+        section.main__productHots
+            .container
+                .row
+                    .col-lg-12
+                        +titleSection("N","SẢN PHẨM NỔI BẬT","","1","2")
+                .row
+                    .col-lg-3.col-md-12
+                        .row
+                            +listFilter("DANH MỤC SẢN PHẨM",listFilter,"","X","Y")
+                    .col-lg-9.col-md-12
+                        .row
+                            +carousel(products,6,"carouselProduct","desktopCarousel",4,6,12)
+                            +carousel(products,2,"carouselProduct1","laptopCarousel",4,6,12)
+                            +carousel(products,1,"carouselProduct2","mobileCarousel",4,6,12)
+        section.newProducts
+            .container
+                .row
+                    .col-lg-12  
+                        +titleSection("Y","SẢN PHẨM MỚI","3","4","5")
+                    .col-lg-12.col-md-12
+                        .row
+                            +carousel(newProducts,3,"carouselProduct3","desktopCarousel",4,6,12)
+                            +carousel(newProducts,2,"carouselProduct4","laptopCarousel",4,6,12)
+                            +carousel(newProducts,1,"carouselProduct5","mobileCarousel",4,6,12)
+        section.banner__main-child.pb-5
+            .container
+                .row
+                    .col-lg-6.col-md-6.col-12
+                        img(src="./assets/images/banner/1.png", alt="banner child")
+                    .col-lg-6.col-md-6.col-12
+                        img(src="./assets/images/banner/2.png", alt="banner child")
+        section.selling__products
+            .container
+                .row
+                    .col-lg-12
+                        +titleSection("Y","SẢN PHẨM BÁN CHẠY","6","7","8")
+                    .col-lg-12
+                        .row
+                            +carousel(sellingProduct,5,"carouselProduct6","desktopCarousel",4,6,12)
+                            +carousel(sellingProduct,2,"carouselProduct7","laptopCarousel",4,6,12)
+                            +carousel(sellingProduct,1,"carouselProduct8","mobileCarousel",4,6,12)
+        section.banner__main-last.pb-5
+            .container
+                .row
+                    .col-lg-12.banner__main-last-mobile
+                        img(src="./assets/images/banner/4.png", alt="banner4")
+                    .col-lg-12.banner__main-last-pc
+                        img(src="./assets/images/banner/3.png", alt="")
+        section.newProducts-2
+            .container
+                .row
+                    .col-lg-12
+                        +titleSection("","HÀNG MỚI VỀ","9","10","11")
+                    +carousel(newProduct2,4,"carouselProduct9","desktopCarousel",6,12,12,"Y")
+                    +carousel(newProduct2,2,"carouselProduct10","laptopCarousel",6,12,12,"Y")
+                    +carousel(newProduct2,1,"carouselProduct11","mobileCarousel",6,12,12,"Y")
+        section.partners
+            .container
+                .row
+                    each partner in partners
+                        .col-lg.partners__list.desktopCarousel
+                            img(src=partner, alt="")
+                    +carousel(partners,3,"carouselPartner","laptopCarousel",4,4,6,"","Y")
+                    +carousel(partners,1,"carouselPartner","mobileCarousel",6,6,12,"","Y")
+        section.register.d-flex.justify-content-center.align-items-center
+                .justify-content-center.register__inner.px-4
+                    .register__title.text-center
+                        h3 Đăng ký để nhận tin tức khuyến mãi hàng tuần
+                    form(action="#").form-inline.justify-content-center
+                        input.w-50(type="email" placeholder = "Nhập email của bạn...").form-control
+                        button.text-white.btn.btn-warning.px-5 Đăng ký

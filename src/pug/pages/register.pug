@@ -1,0 +1,44 @@
+extend ../base/base.pug
+block content
+    +breadcrumbs([{ link: '/', name: 'Trang chủ' }, { link: './register.html', name: 'Đăng nhập' }])
+    section.login
+        .container
+            .row
+                p.col-lg-12.py-3 THÔNG TIN CÁ NHÂN
+                .col-lg-12
+                    form(action="#").form-comment.pb-5
+                        .form-row
+                            .form-group.col.md-6
+                                label(for="inputName") Họ và tên: 
+                                    span *
+                                input.form-control.rounded-0(type="text" id= "inputName")
+                            .form-group.col-md-6
+                                label(for="inputEmail") Email: 
+                                    span *
+                                input.form-control.rounded-0(type="email" id="inputEmail")
+                        .form-row
+                            .form-group.col.md-6
+                                label(for="inputName") Số điện thoại: 
+                                    span *
+                                input.form-control.rounded-0(type="text" id= "inputName")
+                            .form-group.col-md-6
+                                label(for="inputEmail") Địa chỉ: 
+                                    span *
+                                input.form-control.rounded-0(type="email" id="inputEmail")
+                        .custom-checkbox
+                            input(type="checkbox")#custom-check1
+                            label(for="custom-check1").text-span.font-italic Đăng ký nhận tin tức qua email
+                p.col-lg-12 THÔNG TIN ĐĂNG NHẬP
+                .col-lg-12
+                    form(action="#").form-comment.pb-5
+                        .form-row
+                            .form-group.col.md-6
+                                label(for="inputName") Họ và tên: 
+                                    span *
+                                input.form-control.rounded-0(type="text" id= "inputName")
+                            .form-group.col-md-6
+                                label(for="inputEmail") Email: 
+                                    span *
+                                input.form-control.rounded-0(type="email" id="inputEmail")
+                        button.btn.rounded-0.text-white.btn-dark ĐĂNG NHẬP
+                        button.btn.rounded-0.text-white.btn-warning ĐĂNG KÝ

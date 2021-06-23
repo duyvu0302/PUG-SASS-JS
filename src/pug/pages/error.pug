@@ -1,0 +1,12 @@
+extend ../base/base.pug
+block content
+    section.error
+        .container
+            .row.d-flex.justify-content-around
+                .error__content.d-flex.flex-column.justify-content-center.align-items-center
+                    p.h1 404 ERROR
+                    P Chúng tôi không tìm thấy kết quả nào phù hợp với tìm kiếm của bạn
+                    p.pb-3 Xin vui lòng trở về trang chủ
+                    a(href="./").p-3.px-4.rounded-0.d-inline-block.btn.btn-dark.text-white TRANG CHỦ
+                .error__img
+                    img(src="./assets/images/products/10.png", alt="error")

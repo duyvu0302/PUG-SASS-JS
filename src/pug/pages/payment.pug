@@ -1,0 +1,62 @@
+extends ../base/base.pug
+
+block content
+  +process('Thanh toán thành công', 3)
+  .container
+    .row
+      .col-4 
+        .complete-cart-content
+          h4 Hóa đơn
+          p#cart-id
+            span.font-weight-bold ID: 
+            span#bill-id 
+          p 
+            span.font-weight-bold Trạng thái: 
+            | Đang chờ xử lý
+          p#date-create 
+            span.font-weight-bold Ngày đặt hàng:  
+            span#bill-date 
+      .col-4 
+        .complete-cart-content
+          h4 Thồng tin người dùng
+          p 
+            span.font-weight-bold Họ và tên: 
+            span#person-name 
+          p 
+            span.font-weight-bold Email: 
+            span#person-email 
+          p#address 
+            span.font-weight-bold Địa chỉ:  
+            span#person-address Chưa biết
+      .col-4 
+        .complete-cart-paymethod
+          h4 Phương thức thanh toán
+          p#bill-paymethod.mb-0.mt-2 
+    table.table.table-bordered.my-5
+      thead
+        tr.text-center
+          th #
+          th Sản phẩm
+          th Tên
+          th Đơn giá
+          th Số lượng
+          th Thành tiền
+      tbody#cart-shopping-body
+    .row
+      .col-8
+        .bill-content
+          h4 Ghi chú đơn hàng: 
+          p#bill-note 
+      .col-2 
+        .bill-content
+          p.font-weight-bold Tổng tiền: 
+          p.font-weight-bold Thuế:
+          p.font-weight-bold Thanh toán:
+      .col-2
+        .bill-content
+          p#shopping-cart-total.text-danger 0
+          p#shopping-cart-tax.text-danger 0
+          p#shopping-cart-pay.text-danger 0
+        a(href="/").btn.btn-warning.rounded-0.text-white.align-center.d-flex.justify-content-center.my-4 VỀ TRANG CHỦ
+block script 
+  script(src="./assets/js/payment.js")

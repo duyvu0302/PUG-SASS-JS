@@ -1,0 +1,59 @@
+block variables
+    include ../base/data.pug
+
+mixin carousel(data, size, id,type,lg,md,sm,other,product)
+    div( id=id, class = `${type} carousel slide carouselProduct` data-ride = 'carousel'  )
+        div(class="carousel-inner")
+            if size !== 5
+                - for(var i= 0; i< data.length; i+=size)
+                    - var carouselContent = data.slice(i, i+size)
+                        div(class=`carousel-item ${i == 0 && "active"} `)
+                            .container
+                                .row
+                                    each item, index in carouselContent
+                                        div(class =  `col-lg-${lg} col-md-${md} col-${sm}`)
+                                            if product == "Y"
+                                                img(src=item, alt="partner")
+                                            else
+                                                +product(item,other)
+            if size === 5
+                - for(var i= 0; i< data.length; i+=size)
+                    - var carouselContent = data.slice(i, i+size)
+                    - var [item1,item2,item3,item4,item5] = carouselContent
+                        div(class=`carousel-item ${i == 0 && "active"} `)
+                            .container
+                                .row
+                                    .col-lg-3
+                                        .row
+                                            .col-lg-12
+                                                +product(item1,other)
+                                            .col-lg-12
+                                                +product(item2,other)
+                                    .col-lg-6.img-center
+                                        +product(item3,other)
+                                    .col-lg-3
+                                        .row
+                                            .col-lg-12
+                                                +product(item4,other)
+                                            .col-lg-12
+                                                +product(item5,other)
+
+mixin carouselsHome()
+    #carouselHome.carousel.slide(data-ride = 'carousel')
+        ul.carousel-indicators
+            li(data-target="#carouselHome" data-slide-to="0" class="normal active")
+            li(data-target="#carouselHome" data-slide-to="1" class="normal")
+            li(data-target="#carouselHome" data-slide-to="2" class="normal")
+        .carousel-inner
+            .carousel-item.active
+                img(src="./assets/images/SLIDER.jpg", alt="banner1")
+            .carousel-item
+                img(src="./assets/images/SLIDER.jpg", alt="banner2")
+            .carousel-item
+                img(src="./assets/images/SLIDER.jpg", alt="banner3")
+
+        a(class="carousel-control-prev" href="#carouselHome" data-slide="prev")
+            span(class="carousel-control-prev-icon")
+        a(class="carousel-control-next" href="#carouselHome" data-slide="next")
+            span(class="carousel-control-next-icon")
+        
